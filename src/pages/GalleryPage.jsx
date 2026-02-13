@@ -67,8 +67,8 @@ const GalleryPage = () => {
         {
             id: 7,
             size: 'small',
-            title: "Goofy Mode",
-            desc: "Zero shame.",
+            title: "Silly Selfies",
+            desc: "Us being us.",
             color: "#4CA8DD",
             img: sillyImg
         }
@@ -153,7 +153,7 @@ const GalleryPage = () => {
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '4rem', opacity: 0.7 }}>
-                    <p>More memories loading...</p>
+                    <p style={{ fontSize: '1.2rem', fontStyle: 'italic' }}>To be continued... ❤️</p>
                 </div>
             </div>
         </div>
