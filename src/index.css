@@ -1,0 +1,115 @@
+:root {
+  /* Palette Updated - Removed Pink */
+  --pink-light: #A5F3FC;
+  /* Replaced with Light Cyan */
+  --pink-main: #0EA5E9;
+  /* Replaced with Sky Blue */
+
+  /* Blue Palette */
+  --blue-dark: #292F91;
+  --blue-light: #4CA8DD;
+
+  /* Neutrals */
+  --bg-gradient: linear-gradient(135deg, #1e3a8a 0%, #292F91 50%, #4CA8DD 100%);
+  --gradient-blue: linear-gradient(to bottom, #292F91, #4CA8DD);
+  --gradient-pink: linear-gradient(to bottom, #4CA8DD, #A5F3FC);
+  /* Renamed purpose to light blue gradient */
+  --gradient-mix: linear-gradient(135deg, #4CA8DD 0%, #292F91 100%);
+
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  /* Keeps gradient fixed on scroll */
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  /* Very sheer background */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  /* Highlight on top */
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  /* Highlight on left */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+/* Hover effect for interactive glass cards */
+.glass-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Scrollbar styling for that premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
