@@ -7,7 +7,7 @@ import GalleryPage from './pages/GalleryPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/journey" element={<JourneyPage />} />
