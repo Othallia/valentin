@@ -52,6 +52,48 @@ import LDR_Moment_3 from '../assets/LDR_Moment_3.png';
 import LDR_Moment_4 from '../assets/LDR_Moment_4.png';
 import LDR_Moment from '../assets/LDR_Moment.mp4';
 
+// ─── Arcade Date Assets ──────────────────────────────────────────
+import arcadeDate1 from '../assets/arcade_date_1.jpg';
+import arcadeDate2 from '../assets/arcade_date_2.jpg';
+import arcadeDate3 from '../assets/arcade_date_3.jpg';
+import arcadeDate4 from '../assets/arcade_date_4.jpg';
+import arcadeDateVideo from '../assets/arcade.mp4';
+
+// ─── K3 Mart Date Assets ─────────────────────────────────────────
+import k3martDate1 from '../assets/k3mart_date_1.jpg';
+import k3martDate2 from '../assets/k3mart_date_2.jpg';
+import k3martDate3 from '../assets/k3mart_date_3.jpg';
+import k3martDate4 from '../assets/k3mart_date_4.jpg';
+import k3martDateVideo from '../assets/k3mart_date.mp4';
+
+// ─── GI Mall Assets ─────────────────────────────────────────
+import giMall1 from '../assets/gi1.jpg';
+import giMall2 from '../assets/gi2.jpg';
+import giMall3 from '../assets/gi3.jpg';
+import giMall4 from '../assets/gi4.jpg';
+import giMall5 from '../assets/gi5.jpg';
+
+// ─── Shigeru Date Assets ─────────────────────────────────────────
+import shigeruDate1 from '../assets/shigeru_date1.jpg';
+import shigeruDate2 from '../assets/shigeru_date2.jpg';
+import shigeruDate3 from '../assets/shigeru_date3.jpg';
+import shigeruDate4 from '../assets/shigeru_date4.jpg';
+import shigeruDateVideo from '../assets/shigerudate.mp4';
+
+// ─── Baiq Fashion Assets ─────────────────────────────────────────
+import baiqFashion1 from '../assets/baiq_fashion_1.jpg';
+import baiqFashion2 from '../assets/baiq_fashion_2.jpg';
+import baiqFashion3 from '../assets/baiq_fashion_3.jpg';
+import baiqFashion4 from '../assets/baiq_fashion_4.jpg';
+import baiqFashion5 from '../assets/baiq_fashion_5.jpg';
+
+// ─── Double Date Assets ─────────────────────────────────────────
+import doubleDate1 from '../assets/double_date_1.jpg';
+import doubleDate2 from '../assets/double_date_2.jpg';
+import doubleDate3 from '../assets/double_date_3.jpg';
+import doubleDate4 from '../assets/double_date_4.jpg';
+import doubleDate5 from '../assets/double_date_5.jpg';
+
 export const dates = [
     {
         id: 1,
@@ -167,6 +209,90 @@ export const dates = [
     },
     {
         id: 9,
+        title: "Arcade Date",
+        date: "2025-09-09",
+        description: "Finally, an arcade date! Competitive mode: ON. I honestly don't remember who won more games, but I do remember laughing way too hard the whole time. Best kind of chaos.",
+        image: arcadeDate1,
+        video: arcadeDateVideo,
+        gallery: [
+            { type: 'image', src: arcadeDate1, caption: 'Ready to Play' },
+            { type: 'image', src: arcadeDate2, caption: 'Game On' },
+            { type: 'image', src: arcadeDate3, caption: 'High Score' },
+            { type: 'image', src: arcadeDate4, caption: 'Victory Lap' }
+        ]
+    },
+    {
+        id: 10,
+        title: "K3 Mart Date",
+        date: "2025-12-29",
+        description: "K3 Mart run with you — somehow even just grabbing snacks and wandering around the store at night turned into a full memory. that's just how it is with you.",
+        image: k3martDate1,
+        video: k3martDateVideo,
+        gallery: [
+            { type: 'image', src: k3martDate1, caption: 'K3 Mart Vibes' },
+            { type: 'image', src: k3martDate2, caption: 'Snack Hunt' },
+            { type: 'image', src: k3martDate3, caption: 'OOK' },
+            { type: 'image', src: k3martDate4, caption: 'us' }
+        ]
+    },
+    {
+        id: 11,
+        title: "Shigeru Date",
+        date: "2026-03-12",
+        description: "Shigeru date! One of those days that just felt right from start to finish. Good place, good food, and the best company.",
+        image: shigeruDate1,
+        video: shigeruDateVideo,
+        gallery: [
+            { type: 'image', src: shigeruDate1, caption: 'Shigeru Vibes' },
+            { type: 'image', src: shigeruDate2, caption: 'Us' },
+            { type: 'image', src: shigeruDate3, caption: 'Good Times' },
+            { type: 'image', src: shigeruDate4, caption: 'Memory Made' }
+        ]
+    },
+    {
+        id: 12,
+        title: "Baiq Fashion",
+        date: "2026-03-25",
+        description: "found out about this place through my partner — I was literally just tagging along while they shopped, but the store was so good I ended up buying something too. I got the cute one, they got the cool one. zero regrets.",
+        image: baiqFashion5,
+        video: null,
+        gallery: [
+            { type: 'image', src: baiqFashion1, caption: 'Fashion Check' },
+            { type: 'image', src: baiqFashion2, caption: 'Trying Stuff' },
+            { type: 'image', src: baiqFashion3, caption: 'My cutie shirt' },
+            { type: 'image', src: baiqFashion4, caption: 'So cuteee' }
+        ]
+    },
+    {
+        id: 13,
+        title: "Double Date with Emo Shey",
+        date: "2026-03-27",
+        description: "first double date! bringing our friends into the mix and honestly it was such a good time. more people, more chaos, more memories.",
+        image: doubleDate1,
+        video: null,
+        gallery: [
+            { type: 'image', src: doubleDate2, caption: 'Our Love Birds' },
+            { type: 'image', src: doubleDate3, caption: 'im happy cuz meet my online friend' },
+            { type: 'image', src: doubleDate4, caption: 'The Blok M Squad' },
+            { type: 'image', src: doubleDate5, caption: 'Us in the mirror lol' }
+        ]
+    },
+    {
+        id: 14,
+        title: "Our Last Night in GI Mall",
+        date: "2026-04-04",
+        description: "our last night together before heading back to the long distance phase. we made it count — wandering around GI Mall, not wanting the night to end. honestly one of those bittersweet memories that hits different.",
+        image: giMall5,
+        video: null,
+        gallery: [
+            { type: 'image', src: giMall1, caption: 'GI Mall Night' },
+            { type: 'image', src: giMall2, caption: 'My baby and her first Hirono' },
+            { type: 'image', src: giMall3, caption: 'Late night drive' },
+            { type: 'image', src: giMall4, caption: 'selfie in the new Samsung Galaxy S25' },
+        ]
+    },
+    {
+        id: 15,
         title: "LDR Phase",
         date: "Present",
         description: "Miles apart again. It honestly sucks, I'm not gonna lie. But hey, thank god for video calls. Missing you a little extra today.",

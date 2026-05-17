@@ -67,24 +67,25 @@ const DatePage = () => {
     const hasGallery = currentDate.gallery && currentDate.gallery.length > 0;
 
     return (
-        <div className="container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem 0', position: 'relative' }}>
+        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 'clamp(4rem, 8vw, 5rem) 1rem 2rem 1rem', position: 'relative' }}>
 
             <FloatingParticles count={20} colors={['rgba(255,255,255,0.2)', 'rgba(76, 168, 221, 0.3)']} />
 
-            {/* Navigation Header */}
-            <div style={{ position: 'fixed', top: 30, left: 30, zIndex: 10 }}>
+            {/* Navigation Header - Back Button */}
+            <div style={{ position: 'fixed', top: '15px', left: '15px', zIndex: 10 }}>
                 {/* BACK BUTTON POINTS TO TIMELINE WITH STATE */}
-                <Link to="/journey" state={{ scrollToTimeline: true }}>
+                <Link to="/journey" state={{ scrollTo: `timeline-card-${dateId}` }}>
                     <button className="glass" style={{
-                        padding: '12px 20px',
+                        padding: 'clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px)',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '8px',
+                        gap: '6px',
                         color: 'var(--white)',
                         fontWeight: 'bold',
-                        background: 'rgba(255,255,255,0.15)'
+                        background: 'rgba(255,255,255,0.15)',
+                        fontSize: 'clamp(0.85rem, 2.5vw, 1rem)',
                     }}>
-                        <ArrowLeft size={20} /> Back
+                        <ArrowLeft size={18} /> Back
                     </button>
                 </Link>
             </div>
@@ -102,31 +103,31 @@ const DatePage = () => {
                         opacity: { duration: 0.2 }
                     }}
                     className="glass"
-                    style={{ padding: '3.5rem', maxWidth: '850px', width: '100%', margin: '2rem 0', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', position: 'relative', zIndex: 1 }}
+                    style={{ padding: 'clamp(1.5rem, 5vw, 3.5rem)', maxWidth: '850px', width: '100%', margin: '1rem 0', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', position: 'relative', zIndex: 1 }}
                 >
-                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                         <span style={{
                             color: 'var(--white)',
                             background: 'rgba(255,255,255,0.2)',
                             padding: '5px 15px',
                             borderRadius: '20px',
-                            fontSize: '0.9rem',
+                            fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)',
                             textTransform: 'uppercase',
                             letterSpacing: '1px'
                         }}>
                             Chapter {String(currentDate.id).padStart(2, '0')}
                         </span>
-                        <h1 style={{ fontSize: '3rem', color: 'var(--white)', margin: '15px 0', fontWeight: '700' }}>{currentDate.title}</h1>
-                        <p style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontSize: '1.1rem' }}>{currentDate.date}</p>
+                        <h1 style={{ fontSize: 'clamp(1.8rem, 7vw, 3rem)', color: 'var(--white)', margin: '12px 0', fontWeight: '700' }}>{currentDate.title}</h1>
+                        <p style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)' }}>{currentDate.date}</p>
                     </div>
 
                     {/* Main Media (Video/Image) */}
                     <div style={{
                         width: '100%',
-                        height: '400px',
+                        height: 'clamp(220px, 45vw, 400px)',
                         background: 'rgba(0,0,0,0.2)',
                         borderRadius: '16px',
-                        marginBottom: '2.5rem',
+                        marginBottom: '2rem',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -151,7 +152,7 @@ const DatePage = () => {
                         )}
                     </div>
 
-                    <p style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--white)', textAlign: 'justify', whiteSpace: 'pre-line', fontWeight: '300', marginBottom: '3rem' }}>
+                    <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', lineHeight: '1.8', color: 'var(--white)', textAlign: 'justify', whiteSpace: 'pre-line', fontWeight: '300', marginBottom: '2rem' }}>
                         {currentDate.description}
                     </p>
 
@@ -208,24 +209,24 @@ const DatePage = () => {
                     )}
 
                     {/* Navigation Buttons */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '1rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '1rem', gap: '10px' }}>
                         <button onClick={handlePrev} style={{
-                            display: 'flex', alignItems: 'center', gap: '10px',
-                            background: 'transparent', color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem',
-                            padding: '10px'
+                            display: 'flex', alignItems: 'center', gap: '8px',
+                            background: 'transparent', color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)',
+                            padding: '10px 5px'
                         }}>
-                            <ArrowLeft /> Previous
+                            <ArrowLeft size={18} /> Previous
                         </button>
 
                         <button onClick={handleNext} style={{
-                            display: 'flex', alignItems: 'center', gap: '10px',
+                            display: 'flex', alignItems: 'center', gap: '8px',
                             background: 'var(--white)', color: 'var(--blue-dark)',
-                            padding: '14px 30px', borderRadius: '30px', fontSize: '1.1rem',
+                            padding: 'clamp(10px, 2vw, 14px) clamp(16px, 5vw, 30px)', borderRadius: '30px', fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)',
                             fontWeight: 'bold',
                             boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
                             transition: 'transform 0.2s'
                         }}>
-                            {dateId === totalDates ? 'Finish' : 'Next Date'} <ArrowRight />
+                            {dateId === totalDates ? 'Finish' : 'Next Date'} <ArrowRight size={18} />
                         </button>
                     </div>
                 </motion.div>

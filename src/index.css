@@ -113,3 +113,34 @@ button {
     transform: translateY(0px);
   }
 }
+
+/* ========== RESPONSIVE / MOBILE ========== */
+
+/* Viewport meta is set in index.html, these are CSS helpers */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Make flex rows wrap on mobile */
+  .flex-row-wrap {
+    flex-direction: column !important;
+  }
+
+  /* Hide arch decoration on small screens */
+  .arch-deco {
+    display: none;
+  }
+
+  /* Carousel nav buttons: hide on very small screens (swipe is enough) */
+  .carousel-nav-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra-small: tighten glass card padding */
+  .glass {
+    border-radius: 16px;
+  }
+}

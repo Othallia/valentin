@@ -88,13 +88,13 @@ const GalleryPage = () => {
             <GlassNavigation />
 
             {/* Spacer for fixed nav */}
-            <div style={{ height: '100px' }}></div>
+            <div style={{ height: '90px' }}></div>
 
-            <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
+            <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 16px' }}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    style={{ textAlign: 'center', marginBottom: '4rem' }}
+                    style={{ textAlign: 'center', marginBottom: '3rem' }}
                 >
                     <div style={{
                         display: 'inline-flex', alignItems: 'center', gap: '10px',
@@ -102,65 +102,76 @@ const GalleryPage = () => {
                         backdropFilter: 'blur(5px)', marginBottom: '1rem',
                         border: '1px solid rgba(255,255,255,0.2)'
                     }}>
-                        <Camera size={20} /> <span style={{ fontWeight: 600 }}>The Little Things</span>
+                        <Camera size={18} /> <span style={{ fontWeight: 600, fontSize: 'clamp(0.85rem, 3vw, 1rem)' }}>The Little Things</span>
                     </div>
-                    <h1 style={{ fontSize: '3.5rem', fontWeight: 800, textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}>
-                        Core Memories
+                    <h1 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', fontWeight: 800, textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}>
+                        our core memories
                     </h1>
-                    <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.8)', maxWidth: '500px', margin: '0 auto' }}>
-                        Just a collection of my favorite moments with you.
+                    <p style={{ fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', maxWidth: '500px', margin: '0 auto' }}>
+                        just the moments that actually matter.
                     </p>
                 </motion.div>
 
-                {/* BENTOO GRID LAYOUT */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', // Responsive cols
-                    gridAutoRows: '200px', // Base row height
-                    gap: '20px',
-                }}>
-                    {/* 
-                        CSS Grid Span Logic (Manual for now to match specific Bento shapes)
-                        First item: Large (2x2)
-                        Second item: Tall (1x2)
-                        Third item: Small (1x1)
-                        Fourth item: Small (1x1)
-                        Fifth item: Wide (2x1)
-                        Sixth item: Small (1x1)
-                     */}
-
+                {/* BENTO GRID LAYOUT - Responsive */}
+                <div className="bento-grid">
                     {/* Item 1: Large Square (Top Left) */}
-                    <BentoCard item={galleryItems[0]} style={{ gridColumn: 'span 2', gridRow: 'span 2' }} delay={0.1} />
+                    <BentoCard item={galleryItems[0]} className="bento-large" delay={0.1} />
 
                     {/* Item 2: Tall Rectangle (Right) */}
-                    <BentoCard item={galleryItems[1]} style={{ gridColumn: 'span 1', gridRow: 'span 2' }} delay={0.2} />
+                    <BentoCard item={galleryItems[1]} className="bento-tall" delay={0.2} />
 
                     {/* Item 3: Small Square */}
-                    <BentoCard item={galleryItems[2]} style={{ gridColumn: 'span 1', gridRow: 'span 1' }} delay={0.3} />
+                    <BentoCard item={galleryItems[2]} className="bento-small" delay={0.3} />
 
-                    {/* Item 4: Small Square (Flows naturally) */}
-                    <BentoCard item={galleryItems[3]} style={{ gridColumn: 'span 1', gridRow: 'span 1' }} delay={0.4} />
+                    {/* Item 4: Small Square */}
+                    <BentoCard item={galleryItems[3]} className="bento-small" delay={0.4} />
 
                     {/* Item 5: Wide Rectangle */}
-                    <BentoCard item={galleryItems[4]} style={{ gridColumn: 'span 2', gridRow: 'span 1' }} delay={0.5} />
+                    <BentoCard item={galleryItems[4]} className="bento-wide" delay={0.5} />
 
                     {/* Item 6: Small Square */}
-                    <BentoCard item={galleryItems[5]} style={{ gridColumn: 'span 1', gridRow: 'span 1' }} delay={0.6} />
+                    <BentoCard item={galleryItems[5]} className="bento-small" delay={0.6} />
 
-                    {/* Item 7: Small Square (New) */}
-                    <BentoCard item={galleryItems[6]} style={{ gridColumn: 'span 1', gridRow: 'span 1' }} delay={0.7} />
-
+                    {/* Item 7: Small Square */}
+                    <BentoCard item={galleryItems[6]} className="bento-small" delay={0.7} />
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '4rem', opacity: 0.7 }}>
-                    <p style={{ fontSize: '1.2rem', fontStyle: 'italic' }}>To be continued... ❤️</p>
+                    <p style={{ fontSize: '1.2rem', fontStyle: 'italic' }}>more to come... ❤️</p>
                 </div>
             </div>
+
+            <style>{`
+                .bento-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-auto-rows: 200px;
+                    grid-auto-flow: row dense;
+                    gap: 16px;
+                }
+                .bento-large { grid-column: span 2; grid-row: span 2; }
+                .bento-tall  { grid-column: span 1; grid-row: span 2; }
+                .bento-wide  { grid-column: span 2; grid-row: span 1; }
+                .bento-small { grid-column: span 1; grid-row: span 1; }
+
+                @media (max-width: 600px) {
+                    .bento-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-auto-rows: 120px;
+                        grid-auto-flow: row dense;
+                        gap: 8px;
+                    }
+                    .bento-large { grid-column: span 2; grid-row: span 2; }
+                    .bento-tall  { grid-column: span 1; grid-row: span 2; }
+                    .bento-wide  { grid-column: span 2; grid-row: span 1; }
+                    .bento-small { grid-column: span 1; grid-row: span 1; }
+                }
+            `}</style>
         </div>
     );
 };
 
-const BentoCard = ({ item, style, delay }) => {
+const BentoCard = ({ item, className, delay }) => {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -168,11 +179,11 @@ const BentoCard = ({ item, style, delay }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: delay }}
             whileHover={{ scale: 1.02 }}
+            className={className}
             style={{
-                ...style,
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: '24px',
+                borderRadius: '20px',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                 overflow: 'hidden',
@@ -180,7 +191,7 @@ const BentoCard = ({ item, style, delay }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
-                padding: '1.5rem',
+                padding: '1rem',
                 cursor: 'pointer'
             }}
         >
